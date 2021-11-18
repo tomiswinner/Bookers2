@@ -15,6 +15,7 @@
                           DELETE /users(.:format)                                                                         devise/registrations#destroy
                           POST   /users(.:format)                                                                         devise/registrations#create
                      root GET    /                                                                                        homes#top
+                    about GET    /homes/about(.:format)                                                                   homes#about
                     books GET    /books(.:format)                                                                         books#index
                           POST   /books(.:format)                                                                         books#create
                  new_book GET    /books/new(.:format)                                                                     books#new

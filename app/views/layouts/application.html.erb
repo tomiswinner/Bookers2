@@ -15,7 +15,10 @@
         <%= link_to("Users",users_path) %>
         <%= link_to("Log out",destroy_user_session_path,method: :delete) %>
       <% else %>
-        <%= link_to("About",)
+        <%= link_to("About",about_path) %>
+        <%= link_to("Sign up",new_user_registration) %>
+        <%= link_to("Log in ")
+      <% end %>
     </header>
     <%= yield %>
     <footer>
