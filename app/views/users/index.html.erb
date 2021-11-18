@@ -1,1 +1,17 @@
-<h1>users/index</h1>
+<%= render(partial: 'layouts/sidebar',locals: {book: @book}) %>
+<h1>Users</h1>
+<table>
+  <thead>
+    <th>image</th>
+    <th>name</th>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= attachment_image_tag(user,:profile_image,:fill,30,30,fallback: "no_image.jpg") %></td>
+        <td><%= user.name %></td>
+        <td><%= link_to("Show",user_path(user.id)) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
