@@ -20,6 +20,7 @@
                  new_book GET    /books/new(.:format)                                                                     books#new
                 edit_book GET    /books/:id/edit(.:format)                                                                books#edit
                      book GET    /books/:id(.:format)                                                                     books#show
+                          DELETE /books/:id(.:format)                                                                     books#destroy
                     users GET    /users(.:format)                                                                         users#index
                           POST   /users(.:format)                                                                         users#create
                  new_user GET    /users/new(.:format)                                                                     users#new

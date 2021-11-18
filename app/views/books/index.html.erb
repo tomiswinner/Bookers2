@@ -1,4 +1,5 @@
-<h1>books/index</h1>
+<%= render(partial: 'layouts/sidebar',locals: {book: @book}) %>
+<h2></h2>
 <table>
   <% @books.each do |book| %>
     <% user = User.find(book.user_id) %>
