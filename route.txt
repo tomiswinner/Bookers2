@@ -18,10 +18,12 @@
                     books GET    /books(.:format)                                                                         books#index
                           POST   /books(.:format)                                                                         books#create
                  new_book GET    /books/new(.:format)                                                                     books#new
+                edit_book GET    /books/:id/edit(.:format)                                                                books#edit
                      book GET    /books/:id(.:format)                                                                     books#show
                     users GET    /users(.:format)                                                                         users#index
                           POST   /users(.:format)                                                                         users#create
                  new_user GET    /users/new(.:format)                                                                     users#new
+                edit_user GET    /users/:id/edit(.:format)                                                                users#edit
                      user GET    /users/:id(.:format)                                                                     users#show
                refile_app        /attachments                                                                             #<Refile::App app_file="/home/ec2-user/.rvm/gems/ruby-2.6.3/bundler/gems/refile-46b4178654e6/lib/refile/app.rb">
        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show

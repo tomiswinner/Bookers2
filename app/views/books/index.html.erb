@@ -1,1 +1,9 @@
 <h1>books/index</h1>
+<table>
+  <% @books.each do |book| %>
+    <% user = User.find(book.user_id) %>
+    <tr>
+      <td><%= user.name %></td>
+    </tr>
+  <% end %>
+</table>
