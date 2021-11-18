@@ -1,10 +1,12 @@
-<%= render(partial: 'layouts/sidebar',locals: {book: @book}) %>
+<%= render(partial: 'layouts/sidebar',locals: {user: @user}) %>
 <h2></h2>
 <table>
   <% @books.each do |book| %>
     <% user = User.find(book.user_id) %>
     <tr>
       <td><%= user.name %></td>
+      <td><%= book.title %></td>
+      <td><%= book.body %></td>
     </tr>
   <% end %>
 </table>

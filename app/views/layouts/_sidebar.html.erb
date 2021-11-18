@@ -18,6 +18,7 @@
   <% end %>
 </div>
 <h2>New book</h2>
+<% book = Book.new %>
 <div>
   <%= form_with(model: book,url: "/books#create",local: true,method: :post) do |f| %>
     <div>
