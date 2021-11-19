@@ -11,13 +11,16 @@
 
   <body>
     <header>
+      <%= link_to("Home",root_path) %>
+      <%=
       <% if user_signed_in? %>
         <%= link_to("Users",users_path) %>
+        <%= link_to("Books",books_path) %>
         <%= link_to("Log out",destroy_user_session_path,method: :delete) %>
       <% else %>
         <%= link_to("About",about_path) %>
         <%= link_to("Sign up",new_user_registration) %>
-        <%= link_to("Log in ")
+        <%= link_to("Log in ",new_user_session) %>
       <% end %>
     </header>
     <%= yield %>
