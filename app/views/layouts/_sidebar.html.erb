@@ -14,7 +14,7 @@
   <% if not user == current_user %>
     <%= link_to("edit profile",user_path(current_user.id)) %>
   <% else %>
-    <%= link_to("edit profile",edit_user_registration_path) %>
+    <%= link_to("edit profile",edit_user_path(current_user.id)) %>
   <% end %>
 </div>
 <h2>New book</h2>
