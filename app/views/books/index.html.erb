@@ -1,12 +1,25 @@
-<%= render(partial: 'layouts/sidebar',locals: {user: @user}) %>
-<h2></h2>
-<table>
-  <% @books.each do |book| %>
-    <% user = User.find(book.user_id) %>
-    <tr>
-      <td><%= user.name %></td>
-      <td><%= book.title %></td>
-      <td><%= book.body %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="container-fluid">
+  <div class="row">
+    <%= render(partial: 'layouts/sidebar',locals: {user: @user}) %>
+    <div class="col-sm-8">
+      <h2 class="mt-4 mb-2">Books</h2>
+      <table class="table" style="table-layout:fixed; word-wrap:break-word;">
+        <thead>
+          <th></th>
+          <th>Title</th>
+          <th>Opinion</th>
+        </thead>
+        <tbody>
+          <% @books.each do |book| %>
+            <% user = User.find(book.user_id) %>
+            <tr>
+              <td><%= attachment_image_tag(user, :profile_image, :fill,1,1,fallback: "no_image.jpg") %></td>
+              <td><%= link_to(book.title,book_path(book.id)) %></td>
+              <td><%= book.body %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
