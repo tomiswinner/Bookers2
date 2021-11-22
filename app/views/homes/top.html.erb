@@ -1,23 +1,21 @@
-<div class="container-fluid">
   <div class="row justify-content-center">
     <h1 class="col-11 col-sm-10 col-lg-8 col-xl-6 my-4">welcome to <i class="fas fa-book"></i>Bookers !!</h1>
   </div>
+  
   <div class="row justify-content-center">
-      <p class="col-11 col-sm-10 col-lg-8 col-xl-6">
+    <p class="col-11 col-sm-10 col-lg-8 col-xl-6">
         In <i class="fas fa-book"></i>Bookers,
       <p class="col-11 col-sm-10 col-lg-8 col-xl-6">
         you can share and exchange your opinions, impressions and emotions
       <p class="col-11 col-sm-10 col-lg-8 col-xl-6 mb-5">
         about various books!
-      </p>
-  </div>
-  <div class="btn-wrapper col-11 col-sm-10 col-lg-8 col-xl-6 mx-auto">
-    <div class="row">
-      <%= link_to("Log in",new_user_session_path,class: "btn btn-block btn-primary mb-4 mx-auto w-75") %>
+    </p>
+    <div class="btn-wrapper col-11 col-sm-10 col-lg-8 col-xl-6 mx-auto">
+      <div class="row">
+        <%= link_to("Log in",new_user_session_path,class: "btn btn-block btn-primary mb-4 mx-auto w-75") %>
+      </div>
+      <div class="row">
+        <%= link_to("Sign up",new_user_registration_path,class: "btn btn-block btn-success mb-4 mx-auto w-75") %>
+      </div>
     </div>
-    <div class="row">
-      <%= link_to("Sign up",new_user_registration_path,class: "btn btn-block btn-success mb-4 mx-auto w-75") %>
-    </div>
   </div>
-
-</div>
