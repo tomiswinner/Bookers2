@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_11_17_065237) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.integer "#<ActiveRecord::ConnectionAdapters::SQLite3::TableDefinition:0x00000000041b4ff0>"
+    t.integer "#<ActiveRecord::ConnectionAdapters::SQLite3::TableDefinition:0x00000000029d7c70>"
   end
 
   create_table "users", force: :cascade do |t|
