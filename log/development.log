@@ -7448,3 +7448,37 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 45ms (Views: 41.3ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/users/1" for 203.139.73.179 at 2021-11-23 14:25:30 +0000
+Cannot render console from 203.139.73.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_sidebar.html.erb (194.7ms)
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (198.1ms)
+Completed 200 OK in 325ms (Views: 294.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1" for 203.139.73.179 at 2021-11-23 14:26:48 +0000
+Cannot render console from 203.139.73.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_sidebar.html.erb (2.3ms)
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 57ms (Views: 53.8ms | ActiveRecord: 0.6ms)
+
+
