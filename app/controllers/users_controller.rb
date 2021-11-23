@@ -15,8 +15,18 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(current_user.id)
-    @user.update(user_params)
-    redirect_to(user_path(current_user.id))
+    if @user.update(user_params)
+      flash[:notice] = "User data was successfully updated"
+      redirect_to(user_path(current_user.id))
+    else
+      err_msg = "Error! Failed to update data.\n"
+      @user.errors.full_messages.each do |msg|
+        err_msg += msg + "\n"
+      end
+      
+      flash[:alert] = err_msg
+      render(action: "edit")
+    end
   end
 
   private

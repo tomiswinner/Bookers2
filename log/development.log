@@ -3152,3 +3152,1065 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 54ms (Views: 52.3ms | ActiveRecord: 0.3ms)
 
 
+Started POST "/books" for 103.5.140.138 at 2021-11-23 06:06:14 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Mi0Z1WFkIQXC4h1Wtf/C8YpzGJy0oV8see/4YBCOJdO01YrFFgTKiA+PrUOpnclpwOf89l/WtZA+HcwHURumQ==", "book"=>{"title"=>"", "body"=>""}, "commit"=>"Create Book"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/books_controller.rb:9
+Completed 422 Unprocessable Entity in 33ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Title can't be blank, Body can't be blank):
+  
+app/controllers/books_controller.rb:9:in `create'
+Started GET "/users/2/edit" for 103.5.140.138 at 2021-11-23 06:06:26 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 272ms (Views: 268.5ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:06:30 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r2qYOuOnsVYNYeNKMvh3duveyaJp+m+49YSK/8yGO6ZhkguSb4/eN8uLUfd+WKYlER9dg+zSzujXu8li9b3QRg==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+Redirected to https://30d9372d84b44db5a826c75e44c73527.vfs.cloud9.us-east-1.amazonaws.com/users/2
+Completed 302 Found in 27ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2" for 103.5.140.138 at 2021-11-23 06:06:31 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_sidebar.html.erb:17
+  Rendered layouts/_sidebar.html.erb (3.1ms)
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 66ms (Views: 63.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2/edit" for 103.5.140.138 at 2021-11-23 06:06:33 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 42ms (Views: 39.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:06:38 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2hWQZ+srtIS3E06Pb7SuPXkbVNNdLyhSSNWVWHwj6cgU7QPPZwPb5XH5/DIjFH9ug9rA8tgHiQJq6tbFRRgCKA==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+Redirected to https://30d9372d84b44db5a826c75e44c73527.vfs.cloud9.us-east-1.amazonaws.com/users/2
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2" for 103.5.140.138 at 2021-11-23 06:06:38 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_sidebar.html.erb:17
+  Rendered layouts/_sidebar.html.erb (3.0ms)
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 44ms (Views: 42.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/edit" for 103.5.140.138 at 2021-11-23 06:06:46 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 52ms (Views: 39.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:06:49 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nh3lDGw46Y8UY6vi8DFP3x6Jg4CrYkXzYudcqvK/nmH45Xak4BCG7tKJGV+8kZ6M5EgXoS5K5KNA2B83y4R1gQ==", "user"=>{"name"=>"こばん", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "profile_image_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "こばん"], ["profile_image_id", "ba1e6451f08d60f914b5a70ed4850dc4caf8b78cf81b8dfb736909bbff3b"], ["updated_at", "2021-11-23 06:06:49.641713"], ["id", 2]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+Redirected to https://30d9372d84b44db5a826c75e44c73527.vfs.cloud9.us-east-1.amazonaws.com/users/2
+Completed 302 Found in 12ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/users/2" for 103.5.140.138 at 2021-11-23 06:06:49 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_sidebar.html.erb:17
+  Rendered layouts/_sidebar.html.erb (2.8ms)
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 43ms (Views: 41.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2" for 103.5.140.138 at 2021-11-23 06:19:30 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_sidebar.html.erb:17
+  Rendered layouts/_sidebar.html.erb (8.1ms)
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 56ms (Views: 45.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/attachments/74e2a024996325862b46be772220ba228d61f6a0/store/ba1e6451f08d60f914b5a70ed4850dc4caf8b78cf81b8dfb736909bbff3b/profile_image" for 103.5.140.138 at 2021-11-23 06:19:34 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-11-23 06:19:34 +0000] GET "/74e2a024996325862b46be772220ba228d61f6a0/store/ba1e6451f08d60f914b5a70ed4850dc4caf8b78cf81b8dfb736909bbff3b/profile_image" 200 10.0ms
+
+Started GET "/users/2/edit" for 103.5.140.138 at 2021-11-23 06:19:36 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/booker/app/views/users/edit.html.erb:52: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/users/edit.html.erb:52: syntax error, unexpected end-of-input, expecting end
+Started GET "/users/2/edit" for 103.5.140.138 at 2021-11-23 06:20:10 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/booker/app/views/users/edit.html.erb:52: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/users/edit.html.erb:52: syntax error, unexpected end-of-input, expecting end
+Started GET "/users/2/edit" for 103.5.140.138 at 2021-11-23 06:20:12 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/booker/app/views/users/edit.html.erb:52: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/users/edit.html.erb:52: syntax error, unexpected end-of-input, expecting end
+Started GET "/users/2/edit" for 103.5.140.138 at 2021-11-23 06:22:05 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/booker/app/views/users/edit.html.erb:52: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/users/edit.html.erb:52: syntax error, unexpected end-of-input, expecting end
+Started GET "/users/2/edit" for 103.5.140.138 at 2021-11-23 06:22:59 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 45ms (Views: 41.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:23:11 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ssGtDYWuf61+6S3RhJaZhBnAQq/lAZzXGZf6UANsww4o2k9BxHP8A0ncmxHQ5xGqeOoRPk6sQ33oiDKBnmqVAA==", "user"=>{"name"=>"こ", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "profile_image_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "こ"], ["profile_image_id", "ba1e6451f08d60f914b5a70ed4850dc4caf8b78cf81b8dfb736909bbff3b"], ["updated_at", "2021-11-23 06:23:11.599892"], ["id", 2]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+Redirected to https://30d9372d84b44db5a826c75e44c73527.vfs.cloud9.us-east-1.amazonaws.com/users/2
+Completed 302 Found in 10ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/users/2" for 103.5.140.138 at 2021-11-23 06:23:11 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_sidebar.html.erb:17
+  Rendered layouts/_sidebar.html.erb (2.9ms)
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 58ms (Views: 56.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/edit" for 103.5.140.138 at 2021-11-23 06:23:17 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 42ms (Views: 38.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:23:21 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6xC9BxfGVrh462NsCFqdcD5tZxellD3sWRBB0TBGvpUl6C6vm+452b4B0dFE+kwjxKzzNiC8nLx7LwJMCX1VdQ==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (307.8ms)
+Completed 500 Internal Server Error in 314ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `errors' for #<#<Class:0x00007fc121e35d98>:0x00007fc121cee9d0>):
+     8:         <% elsif type == "alert" %>
+     9:           <div class="alert alert-danger">
+    10:             <ul>
+    11:               <% errors.full_messages do |err_msg| %>
+    12:                 <li><%= err_msg %></li>
+    13:               <% end %>
+    14:         <% end %>
+  
+app/views/users/edit.html.erb:11:in `block in _app_views_users_edit_html_erb__433144146773546622_70233736309040'
+app/views/users/edit.html.erb:4:in `_app_views_users_edit_html_erb__433144146773546622_70233736309040'
+app/controllers/users_controller.rb:23:in `update'
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:23:50 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZdB/J+Vz+MLOsnIcJstb8LdcSTMlzNJybU5shEqUfaL/y51rpK57bPmHxNxyutPe1nYaoo5hDdicUaRV15IrrA==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for #<Class:0x00007fc121b30788>):
+     8:         <% elsif type == "alert" %>
+     9:           <div class="alert alert-danger">
+    10:             <ul>
+    11:               <% User.errors.full_messages do |err_msg| %>
+    12:                 <li><%= err_msg %></li>
+    13:               <% end %>
+    14:         <% end %>
+  
+app/views/users/edit.html.erb:11:in `block in _app_views_users_edit_html_erb__433144146773546622_70233736428780'
+app/views/users/edit.html.erb:4:in `_app_views_users_edit_html_erb__433144146773546622_70233736428780'
+app/controllers/users_controller.rb:23:in `update'
+Started GET "/users/2/edit" for 103.5.140.138 at 2021-11-23 06:24:44 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 41ms (Views: 37.6ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:24:51 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hr/SkClypD5Xb8cYBtHGpyv4wCHMXWJlCgVYdWBmieEcpDDcaK8nkGBacdhSoE6JStKTsGfwvc/7GpCk/WDf7w==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 43ms (Views: 38.6ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:28:57 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hr/SkClypD5Xb8cYBtHGpyv4wCHMXWJlCgVYdWBmieEcpDDcaK8nkGBacdhSoE6JStKTsGfwvc/7GpCk/WDf7w==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 54ms (Views: 37.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/2" for 103.5.140.138 at 2021-11-23 06:29:12 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_sidebar.html.erb:17
+  Rendered layouts/_sidebar.html.erb (8.7ms)
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 61ms (Views: 48.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/2/edit" for 103.5.140.138 at 2021-11-23 06:29:15 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 41ms (Views: 38.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:29:17 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4FhOQ/qAXK+np/RKgu5bO5QE/WaSba3mEuU2DtWhLWMuoN3rdqgzzmFNRvfOTopobsVpRxdFDLYw2nWT7JrGgw==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 65ms (Views: 59.5ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:30:57 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U64AftT2RM+3YFwj4I5PSEf39hQbijwrhE7D5gBWTwfJteIylSvHYYBV6uO0/8dmJt2lhbAn44F1UQs3nVAZCQ==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 43ms (Views: 38.1ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:32:58 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1m2TZSu9oOy0MdOmc5YNi4fCh9VxRMG15nrT63VcFP1MdnEpamAjQoMEZWYn54Wl5ujURNrpHh8XZRs66FpC8w==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 44ms (Views: 38.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2" for 103.5.140.138 at 2021-11-23 06:34:14 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_sidebar.html.erb:17
+  Rendered layouts/_sidebar.html.erb (3.4ms)
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 45ms (Views: 43.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2/edit" for 103.5.140.138 at 2021-11-23 06:34:16 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 40ms (Views: 37.2ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:34:19 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5wudG4gILwg/J5JVaNuEcoj304wEpL0o46r89o2DBiMp8w6zBCBAafnNIOgke1UhcjZHrYGMHHjBlb9rtLjtww==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 55ms (Views: 50.6ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:34:48 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cI8PbVcNAYLf6y9JWPEDTFONGgu/0pcH7Gk87eYZrNnqlO0hFtCCLOjemYkMgItiMqdJmhR/SK0ddvQ8ex/61w==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 44ms (Views: 39.3ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:37:20 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EW+hOUD/n5Jmm0u4kaG0hg39bDuadX4A5S7BhVADP0yLdEN1ASIcPFGu/XjF0DyobNc/qjHYoaoUMQlUzQVpQg==", "user"=>{"name"=>"こばんざめ", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "profile_image_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "こばんざめ"], ["profile_image_id", "ba1e6451f08d60f914b5a70ed4850dc4caf8b78cf81b8dfb736909bbff3b"], ["updated_at", "2021-11-23 06:37:20.013604"], ["id", 2]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+Redirected to https://30d9372d84b44db5a826c75e44c73527.vfs.cloud9.us-east-1.amazonaws.com/users/2
+Completed 302 Found in 16ms (ActiveRecord: 9.4ms)
+
+
+Started GET "/users/2" for 103.5.140.138 at 2021-11-23 06:37:20 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_sidebar.html.erb:17
+  Rendered layouts/_sidebar.html.erb (3.1ms)
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 44ms (Views: 41.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/books" for 103.5.140.138 at 2021-11-23 06:37:51 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kNCtN0AL62xCBpMeygDvGtd1uA9x2rB7rqyYrV1y2A4Ky097AdZownUzJd6ecWc0tl/rntp3b9Ffs1B8wHSOAA==", "book"=>{"title"=>"", "body"=>""}, "commit"=>"Create Book"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/books_controller.rb:9
+Completed 422 Unprocessable Entity in 7ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Title can't be blank, Body can't be blank):
+  
+app/controllers/books_controller.rb:9:in `create'
+Started POST "/books" for 103.5.140.138 at 2021-11-23 06:41:06 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kNCtN0AL62xCBpMeygDvGtd1uA9x2rB7rqyYrV1y2A4Ky097AdZownUzJd6ecWc0tl/rntp3b9Ffs1B8wHSOAA==", "book"=>{"title"=>"", "body"=>""}, "commit"=>"Create Book"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/books_controller.rb:9
+Completed 422 Unprocessable Entity in 19ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Title can't be blank, Body can't be blank):
+  
+app/controllers/books_controller.rb:9:in `create'
+Started POST "/books" for 103.5.140.138 at 2021-11-23 06:42:23 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kNCtN0AL62xCBpMeygDvGtd1uA9x2rB7rqyYrV1y2A4Ky097AdZownUzJd6ecWc0tl/rntp3b9Ffs1B8wHSOAA==", "book"=>{"title"=>"", "body"=>""}, "commit"=>"Create Book"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/books_controller.rb:9
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template books/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/ec2-user/environment/booker/app/views"
+  * "/home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.8.0/app/views"
+):
+  
+app/controllers/books_controller.rb:14:in `create'
+Started GET "/users/2" for 103.5.140.138 at 2021-11-23 06:42:55 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_sidebar.html.erb:17
+  Rendered layouts/_sidebar.html.erb (9.0ms)
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 58ms (Views: 46.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/attachments/74e2a024996325862b46be772220ba228d61f6a0/store/ba1e6451f08d60f914b5a70ed4850dc4caf8b78cf81b8dfb736909bbff3b/profile_image" for 103.5.140.138 at 2021-11-23 06:42:57 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-11-23 06:42:57 +0000] GET "/74e2a024996325862b46be772220ba228d61f6a0/store/ba1e6451f08d60f914b5a70ed4850dc4caf8b78cf81b8dfb736909bbff3b/profile_image" 200 4.4ms
+
+Started POST "/books" for 103.5.140.138 at 2021-11-23 06:42:59 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ttmJqku/k76Nw7Uvdtbgm4lM6EEw1B46E6OM4ZBKTycswmvmCmIQELr2A+8ip2i16Ga70Jt5wZDivEQwDUwZKQ==", "book"=>{"title"=>"", "body"=>""}, "commit"=>"Create Book"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/books_controller.rb:9
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `action' for #<BooksController:0x00007fc121191b00>
+Did you mean?  action_name):
+  
+app/controllers/books_controller.rb:14:in `create'
+Started GET "/users/2" for 103.5.140.138 at 2021-11-23 06:43:13 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_sidebar.html.erb:17
+  Rendered layouts/_sidebar.html.erb (8.0ms)
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 93ms (Views: 82.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/attachments/74e2a024996325862b46be772220ba228d61f6a0/store/ba1e6451f08d60f914b5a70ed4850dc4caf8b78cf81b8dfb736909bbff3b/profile_image" for 103.5.140.138 at 2021-11-23 06:43:14 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-11-23 06:43:14 +0000] GET "/74e2a024996325862b46be772220ba228d61f6a0/store/ba1e6451f08d60f914b5a70ed4850dc4caf8b78cf81b8dfb736909bbff3b/profile_image" 200 3.8ms
+
+Started POST "/books" for 103.5.140.138 at 2021-11-23 06:43:15 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CZbMue1dqJl0bDP8L1FCEnsYY+PK7siJIp/jhPXDJraTjS71rIArN0NZhTx7IMo8GjIwcmFDFyPTgCtVaMVwuA==", "book"=>{"title"=>"", "body"=>""}, "commit"=>"Create Book"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/books_controller.rb:9
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::MissingTemplate (Missing template books/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/ec2-user/environment/booker/app/views"
+  * "/home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.8.0/app/views"
+):
+  
+app/controllers/books_controller.rb:14:in `create'
+Started POST "/books" for 103.5.140.138 at 2021-11-23 06:44:10 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CZbMue1dqJl0bDP8L1FCEnsYY+PK7siJIp/jhPXDJraTjS71rIArN0NZhTx7IMo8GjIwcmFDFyPTgCtVaMVwuA==", "book"=>{"title"=>"", "body"=>""}, "commit"=>"Create Book"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/books_controller.rb:9
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::MissingTemplate (Missing template books/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/ec2-user/environment/booker/app/views"
+  * "/home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.8.0/app/views"
+):
+  
+app/controllers/books_controller.rb:14:in `create'
+Started GET "/users/2/edit" for 103.5.140.138 at 2021-11-23 06:47:08 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 74ms (Views: 59.9ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:47:12 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tc2AljbfsPzQhIzPa41XXHyQLxrfBdnsAFrDab3+18B7NRM+uvffnRZuPnInLYYPhlG7O1oteLwiZYD0hMU8IA==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 45ms (Views: 39.3ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:52:33 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7LY73yyXiR0sD1pm1WAfGA5kOAMpbrciY13L+MHWZ9F2rdmTbUoKsxs67KaBEZc2b05rkoLDaIiSQgMpXNAx3w==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.8ms)
+
+
+  
+TypeError (no implicit conversion of String into Array):
+  
+app/controllers/users_controller.rb:23:in `block in update'
+app/controllers/users_controller.rb:22:in `each'
+app/controllers/users_controller.rb:22:in `update'
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:53:02 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7LY73yyXiR0sD1pm1WAfGA5kOAMpbrciY13L+MHWZ9F2rdmTbUoKsxs67KaBEZc2b05rkoLDaIiSQgMpXNAx3w==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 53ms (Views: 39.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/2" for 103.5.140.138 at 2021-11-23 06:53:46 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_sidebar.html.erb:17
+  Rendered layouts/_sidebar.html.erb (14.9ms)
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 72ms (Views: 70.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/2/edit" for 103.5.140.138 at 2021-11-23 06:53:49 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 44ms (Views: 41.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:53:53 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2eBQR4lMA2xlYys7crVeZtPhuzfB/d8ipfUaBqciYeIXGMPvBWRsDaOJmYY+FY81KSAvFkTVfnKHylmbnhmKAg==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 56ms (Views: 51.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2" for 103.5.140.138 at 2021-11-23 06:54:58 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_sidebar.html.erb:17
+  Rendered layouts/_sidebar.html.erb (8.0ms)
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 62ms (Views: 50.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/2/edit" for 103.5.140.138 at 2021-11-23 06:55:18 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 56ms (Views: 53.2ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:55:23 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LRWYX+NMHr1CzZL+D+2QqCxkdfeoc1p/6qAeMhVeu8/j7Qv3b2Rx3IQnIENDTUH71qXh1i1b+y/In12vLGVQLw==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 49ms (Views: 44.1ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:56:40 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v+acQbke7kunMnhOExc0ewfZY+cN+i4yaFIp2UbTMPEl/X4N+MNt5ZAHzo5HZrxVZvMwdqZX8ZiZTeEI29Vm/w==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 71ms (Views: 42.1ms | ActiveRecord: 1.4ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 06:59:48 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v+acQbke7kunMnhOExc0ewfZY+cN+i4yaFIp2UbTMPEl/X4N+MNt5ZAHzo5HZrxVZvMwdqZX8ZiZTeEI29Vm/w==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 49ms (Views: 43.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2" for 103.5.140.138 at 2021-11-23 07:00:39 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_sidebar.html.erb:17
+  Rendered layouts/_sidebar.html.erb (8.5ms)
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 61ms (Views: 49.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/attachments/74e2a024996325862b46be772220ba228d61f6a0/store/ba1e6451f08d60f914b5a70ed4850dc4caf8b78cf81b8dfb736909bbff3b/profile_image" for 103.5.140.138 at 2021-11-23 07:00:45 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-11-23 07:00:45 +0000] GET "/74e2a024996325862b46be772220ba228d61f6a0/store/ba1e6451f08d60f914b5a70ed4850dc4caf8b78cf81b8dfb736909bbff3b/profile_image" 200 4.0ms
+
+Started GET "/users/2/edit" for 103.5.140.138 at 2021-11-23 07:00:47 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 93ms (Views: 89.8ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 07:00:52 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7L2SR/3iru5Q0byTLAHZp8zgktYmbo2w9Dr66zPUhlkiRQHvccrBj5Y7Di5goQj0NiEG96NGLODWBbl2Cu9tuQ==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 86ms (Views: 77.9ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 07:07:14 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wnTAh68FqG6vtlqH3RVT6ngeU9Ptw+EAXyZjnxNg831YbyLL7tgrwJiD7EeJZNvEGTQAQkZuPqquOatOjmalcw==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 182ms (ActiveRecord: 0.8ms)
+
+
+  
+NameError (undefined local variable or method `x' for #<UsersController:0x00007fc121a36d28>):
+  
+app/controllers/users_controller.rb:27:in `update'
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 07:07:34 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wnTAh68FqG6vtlqH3RVT6ngeU9Ptw+EAXyZjnxNg831YbyLL7tgrwJiD7EeJZNvEGTQAQkZuPqquOatOjmalcw==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.8ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/booker/app/views/layouts/application.html.erb:60: syntax error, unexpected backslash, expecting ')'
+...t_buffer.append=( h(msg).gsub(\n,"<br>").html_safe );@output...
+...                              ^
+/home/ec2-user/environment/booker/app/views/layouts/application.html.erb:60: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+...append=( h(msg).gsub(\n,"<br>").html_safe );@output_buffer.s...
+...                              ^):
+  
+app/views/layouts/application.html.erb:60: syntax error, unexpected backslash, expecting ')'
+app/views/layouts/application.html.erb:60: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/controllers/users_controller.rb:28:in `update'
+Started PATCH "/users/2" for 103.5.140.138 at 2021-11-23 07:08:45 +0000
+Cannot render console from 103.5.140.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wnTAh68FqG6vtlqH3RVT6ngeU9Ptw+EAXyZjnxNg831YbyLL7tgrwJiD7EeJZNvEGTQAQkZuPqquOatOjmalcw==", "user"=>{"name"=>"", "profile_image"=>"{}", "introduction"=>"今までで一番楽しかった"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 60ms (Views: 55.1ms | ActiveRecord: 0.4ms)
+
+

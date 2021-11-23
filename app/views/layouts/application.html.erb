@@ -49,19 +49,19 @@
     </header>
     
     <div class="container-fluid">
-        <div class="row">
-    <div class="col">
-      <% flash.each do |type, msg| %>
-        <% if type == "notice" %>
-          <div class="alert alert-success">
-        <% elsif type == "alert" %>
-          <div class="alert alert-danger">
-        <% end %>
-            <%= msg %>
-          </div>
-      <% end %>
-    </div>
-  </div>
+      <div class="row">
+        <div class="col">
+          <% flash.each do |type, msg| %>
+            <% if type == "notice" %>
+              <div class="alert alert-success">
+            <% elsif type == "alert" %>
+              <div class="alert alert-danger">
+            <% end %>
+                <%= h(msg).gsub(/\n/,"<br>").html_safe %>
+              </div>
+          <% end %>
+        </div>
+      </div>
     </div>
     
     <div class="container-xl px-3">
