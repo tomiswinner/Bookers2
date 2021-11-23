@@ -11,7 +11,7 @@
           <% user = User.find(@book.user_id) %>
           <tr>
             <td>
-              <%= attachment_image_tag(user, :profile_image, :fill,1,1, fallback: "no_image.jpg") %><br>
+              <%= attachment_image_tag(user, :profile_image, fallback: "no_image.jpg",size: "50x50") %><br>
               <%= link_to(user.name,user_path(user.id)) %>
             </td>
             <td><%= link_to(@book.title,book_path(@book.id)) %></td>
