@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+  
+  before_action :authenticate_user!
+  
   def new
     @book = Book.new
   end
@@ -32,7 +35,13 @@ class BooksController < ApplicationController
   end
 
   def edit
-    @book = Book.find(params[:id])
+    if Book.find(params[:id]).user_id == current_user.id
+      @book = Book.find(params[:id])
+    else
+      flash[:alert] = "Error! You are not allowed to edit other user's book"
+      redirect_back(fallback_location: root_path)
+    end
+    
   end
 
   def update

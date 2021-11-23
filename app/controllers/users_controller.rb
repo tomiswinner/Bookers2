@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  
+  before_action :authenticate_user!
 
   def index
     @users = User.all
@@ -11,6 +13,12 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(current_user.id)
+    if User.find(params[:id]).id == current_user.id
+      @user = User.find(params[:id])
+    else
+      flash[:alert] = "Error! You are not allowed to edit other user's book"
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   def update
