@@ -13,7 +13,7 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully posted!"
       redirect_to(book_path(@book.id))
     else
-      err_msg = "Error! Failed to update data.\n"
+      err_msg = "error! Failed to update data.\n"
       @book.errors.full_messages.each do |msg|
         err_msg += msg + "\n"
       end
@@ -31,14 +31,14 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    @user = current_user
+    @user = User.find(@book.user_id)
   end
 
   def edit
     if Book.find(params[:id]).user_id == current_user.id
       @book = Book.find(params[:id])
     else
-      flash[:alert] = "Error! You are not allowed to edit other user's book"
+      flash[:alert] = "error! You are not allowed to edit other user's book"
       redirect_back(fallback_location: root_path)
     end
     
@@ -50,7 +50,7 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully updated!"
       redirect_to(book_path(@book.id))
     else
-      err_msg = "Error! Failed to update data.\n"
+      err_msg = "error! Failed to update data.\n"
       @book.errors.full_messages.each do |msg|
         err_msg += msg + "\n"
       end

@@ -16,8 +16,8 @@ class UsersController < ApplicationController
     if User.find(params[:id]).id == current_user.id
       @user = User.find(params[:id])
     else
-      flash[:alert] = "Error! You are not allowed to edit other user's info"
-      redirect_back(fallback_location: root_path)
+      flash[:alert] = "error! You are not allowed to edit other user's info"
+      redirect_to(user_path(current_user.id))
     end
   end
 
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       flash[:notice] = "User data was successfully updated"
       redirect_to(user_path(current_user.id))
     else
-      err_msg = "Error! Failed to update data.\n"
+      err_msg = "error! Failed to update data.\n"
       @user.errors.full_messages.each do |msg|
         err_msg += msg + "\n"
       end
