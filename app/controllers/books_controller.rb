@@ -39,7 +39,7 @@ class BooksController < ApplicationController
       @book = Book.find(params[:id])
     else
       flash[:alert] = "error! You are not allowed to edit other user's book"
-      redirect_back(fallback_location: root_path)
+      redirect_back(fallback_location: books_path)
     end
     
   end
