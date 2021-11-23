@@ -2,9 +2,6 @@ class BooksController < ApplicationController
   
   before_action :authenticate_user!
   
-  def new
-    @book = Book.new
-  end
 
   def create
     @book = Book.new(books_params)
