@@ -7,11 +7,16 @@ class BooksController < ApplicationController
     @book = Book.new(books_params)
     @book.user_id = current_user.id
     if @book.save
-      flash[:notice] = "Book was successfully posted"
+      flash[:notice] = "Book was successfully posted!"
       redirect_to(book_path(@book.id))
     else
-      flash[:alert] = @book.errors.full_messages
-      render(templates: "books/new")
+      err_msg = "Error! Failed to update data.\n"
+      @book.errors.full_messages.each do |msg|
+        err_msg += msg + "\n"
+      end
+      
+      flash[:alert] = err_msg
+      redirect_back(fallback_location: root_path)
     end
 
   end
@@ -32,8 +37,18 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id])
-    @book.update(books_params)
-    redirect_to(book_path(@book.id))
+    if @book.update(books_params)
+      flash[:notice] = "Book was successfully updated!"
+      redirect_to(book_path(@book.id))
+    else
+      err_msg = "Error! Failed to update data.\n"
+      @book.errors.full_messages.each do |msg|
+        err_msg += msg + "\n"
+      end
+      
+      flash[:alert] = err_msg
+      render(action: "edit")
+    end
   end
 
   def destroy
