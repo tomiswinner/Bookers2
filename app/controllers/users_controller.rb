@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if User.find(params[:id]).id == current_user.id
       @user = User.find(params[:id])
     else
-      flash[:alert] = "Error! You are not allowed to edit other user's book"
+      flash[:alert] = "Error! You are not allowed to edit other user's info"
       redirect_back(fallback_location: root_path)
     end
   end
