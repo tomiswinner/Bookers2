@@ -1,4 +1,18 @@
   <div class="row">
+    <div class="col">
+      <% flash.each do |type, msg| %>
+        <% if type == "notice" %>
+          <div class="alert alert-success">
+        <% elsif type == "alert" %>
+          <div class="alert alert-danger">
+        <% end %>
+            <%= msg %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="col-11 col-sm-10 col-lg-8 col-xl-6 my-4 mx-auto">
       <h1 class="mx-auto w-100">welcome to <i class="fas fa-book"></i>Bookers !!</h1>
     </div>
